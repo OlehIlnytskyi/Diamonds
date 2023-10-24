@@ -1,0 +1,8 @@
+
+# DataSource configuration
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: changemeinprod!
+    driver-class-name: org.postgresql.Driver
