@@ -1,20 +1,20 @@
 # RESTful service Diamonds
 
-## What
-This is a simple REST project
+## Introduction
+This is a simple RESTful project that you can use to study the principle of operation of the technologies used.
 
-## Why
-I wrote this project to learn and use new technologies using the Spring framework. If you are also studying it and you are interested in the technologies used in this project,you can take it as a basis and I will help you understand how everything is arranged here.
+### Why I made this project
+I made this project to learn and use new technologies using the Spring framework. If you are also studying it and you are interested in the technologies used in this project,you can take it as a basis and I will help you understand how everything is arranged here.
 
-## How
+### What was used in this project
 Technologies used in this project:
  - Spring Boot
  - Spring Web
  - Spring Data JDBC (DAO classes)
  - PostgreSQL database
  - Lombok
- - JUnit5 (tests)
- - H2 database (tests)
+ - JUnit5 (for tests)
+ - H2 database (for tests)
 
 # How to Install and Run the project
 
@@ -28,5 +28,6 @@ Technologies used in this project:
 
 Now, when the application is running, you can send different url requests to operate with with your database.
 
-Screen![Collection](https://imgur.com/a/Z0hWGRk).
+Screen![Collection](main/resources/media/post.png).
+2121f![Collection](src/main/resources/media/post.png).
 Data was taken from "https://www.kaggle.com/datasets/joebeachcapital/diamonds/data".
