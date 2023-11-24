@@ -2,13 +2,10 @@ package com.example.diamonds.dao.impl;
 
 import com.example.diamonds.dao.DiamondDao;
 import com.example.diamonds.model.Diamond;
-import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.core.CallableStatementCallback;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
@@ -38,27 +35,18 @@ public class DiamondDaoImpl implements DiamondDao {
     }
 
     @Override
-    public List<Diamond> getSortedBy(String sortedBy, String dir) {
-        //Тут зробили по іншому, тому що автозаповнення можливе тільки для параметрів а не для ключових слів
-
-        return jdbcTemplate.query(
-                "SELECT * FROM diamonds ORDER BY " + sortedBy + " " + dir + " LIMIT 100", new DiamondsRowMapper()
-        );
-    }
-
-    @Override
     public Diamond add(Diamond diamond) {
         jdbcTemplate.update("INSERT INTO diamonds VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-                diamond.carat(),
-                diamond.cut(),
-                diamond.colour(),
-                diamond.clarity(),
-                diamond.depth(),
-                diamond.table(),
-                diamond.price(),
-                diamond.x(),
-                diamond.y(),
-                diamond.z());
+                diamond.getCarat(),
+                diamond.getCut(),
+                diamond.getColour(),
+                diamond.getClarity(),
+                diamond.getDepth(),
+                diamond.getTable(),
+                diamond.getPrice(),
+                diamond.getX(),
+                diamond.getY(),
+                diamond.getZ());
 
         return diamond;
     }
@@ -66,14 +54,29 @@ public class DiamondDaoImpl implements DiamondDao {
     @Override
     public Diamond remove(Diamond diamond) {
         jdbcTemplate.update("DELETE FROM diamonds WHERE carat=? AND x=? AND y=? AND z=?",
-                diamond.carat(),
-                diamond.x(),
-                diamond.y(),
-                diamond.z());
+                diamond.getCarat(),
+                diamond.getX(),
+                diamond.getY(),
+                diamond.getZ());
 
         return diamond;
     }
 
+    @Override
+    public void createTableIfDoesNotExist() {
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS diamonds (" +
+                "carat FLOAT NOT NULL," +
+                "cut VARCHAR(64)," +
+                "color VARCHAR(5)," +
+                "clarity VARCHAR(64)," +
+                "depth FLOAT," +
+                "\"table\" INT," +
+                "price INT," +
+                "x FLOAT," +
+                "y FLOAT," +
+                "z FLOAT" +
+                ");");
+    }
 
     static class DiamondsRowMapper implements RowMapper<Diamond> {
 

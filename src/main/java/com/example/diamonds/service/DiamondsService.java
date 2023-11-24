@@ -24,10 +24,6 @@ public class DiamondsService {
         return diamondDao.getByCarat(carat);
     }
 
-    public List<Diamond> getDiamondsSortedBy(String sortedBy, String dir) {
-        return diamondDao.getSortedBy(sortedBy, dir);
-    }
-
     public Diamond addDiamond(Diamond diamond) {
         return diamondDao.add(diamond);
     }

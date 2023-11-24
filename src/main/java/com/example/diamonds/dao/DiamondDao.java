@@ -9,9 +9,9 @@ public interface DiamondDao {
 
     List<Diamond> getByCarat(float carat);
 
-    List<Diamond> getSortedBy(String sortedBy, String dir);
-
     Diamond add(Diamond diamond);
 
     Diamond remove(Diamond diamond);
+
+    void createTableIfDoesNotExist();
 }

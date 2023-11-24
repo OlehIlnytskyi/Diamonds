@@ -26,11 +26,6 @@ public class DiamondsController {
         return diamondsService.getDiamondsByCarat(carat);
     }
 
-    @GetMapping("/get-sorted-by")
-    public List<Diamond> getDiamondsSortedBy(@RequestParam String sortedBy, @RequestParam String dir) {
-        return diamondsService.getDiamondsSortedBy(sortedBy, dir);
-    }
-
     @PostMapping("/post")
     public Diamond addDiamond(@RequestBody Diamond diamond) {
         return diamondsService.addDiamond(diamond);
