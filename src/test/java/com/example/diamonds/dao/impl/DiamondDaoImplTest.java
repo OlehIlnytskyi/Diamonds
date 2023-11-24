@@ -2,7 +2,6 @@ package com.example.diamonds.dao.impl;
 
 import com.example.diamonds.dao.DiamondDao;
 import com.example.diamonds.model.Diamond;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

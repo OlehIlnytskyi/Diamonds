@@ -13,6 +13,7 @@ public class DiamondsService {
 
     public DiamondsService(DiamondDao diamondDao) {
         this.diamondDao = diamondDao;
+        diamondDao.createTableIfDoesNotExist();
     }
 
 
