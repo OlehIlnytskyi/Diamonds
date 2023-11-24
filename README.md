@@ -28,6 +28,28 @@ Technologies used in this project:
 
 Now, when the application is running, you can send different url requests to operate with with your database.
 
-Screen![Collection](main/resources/media/post.png).
-2121f![Collection](src/main/resources/media/post.png).
+For interaction with database Postman was choosen. Here we can see the execution of all implemented queries:
+
+ 1. Add new diamond:
+    
+    Post method![Collection](src/main/resources/media/post.png)
+
+ 3. Get all diamonds:
+    
+    Get method![Collection](src/main/resources/media/getAll.png)
+    
+ 5. Get diamonds by carat:
+    
+    Get method![Collection](src/main/resources/media/getByCarat.png)
+    
+ 7. Remove diamond:
+    
+    Delete method![Collection](src/main/resources/media/delete.png)
+
+to add:
+ - correct translation
+ - Postman
+ - how to add kaggle data
+ - ending
+    
 Data was taken from "https://www.kaggle.com/datasets/joebeachcapital/diamonds/data".
