@@ -73,7 +73,7 @@ You can also find implemented tests in the project. They work with in-memory dat
 ## Conclusion
 
 I know that project and my explanations are not great, but it is one of my first Spring Boot application where i knew what i was doing, and this is the first README file that i made so detailed. Maybe you can find here something useful, but i dont actually recommend spend a lot of time on this project because it has a lot of disadvantages, like:
- - Шmplementing DAO classes instead of using Hibernate with Spring Data Jpa
+ - Implementing DAO classes instead of using Hibernate with Spring Data Jpa
  - A rather sparse database schema with no relationships
  - ...
 
