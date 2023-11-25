@@ -49,21 +49,38 @@ For interaction with the database, Postman was chosen. If you don't know what it
 
 Here we can see the execution of all implemented queries:
 
-- Add new diamond:
-    
-    Post method![Collection](src/main/resources/media/post.png)
 
-- Get all diamonds:
+### Post method
+  Using the POST method we can add new objects to database. In our implementation we only have to provide URL with POST method and RequestBody in JSON format (in our case it`s object of Diamond class).
+  
+  ![post](src/main/resources/media/post.png)
+  
     
-    Get method![Collection](src/main/resources/media/getAll.png)
+### Get method
+  Using the GET method we can get the list of objects from database. In our implementation we only have to provide URL with GET method.
+  
+  ![getAll](src/main/resources/media/getAll.png)
+
+  Result - list of objects in JSON format:                                                                     
+  
+  ![getAll](src/main/resources/media/getAll_result.png)
+  
     
-- Get diamonds by carat:
+### Get method
+  This is another GET method, using which you can obtain list of objects by selected parameter(in our case this parameter is carat).
+  
+  ![getByCarat](src/main/resources/media/getByCarat.png)
+
+  Result - list of objects in JSON format:                                                                
+  
+  ![getAll](src/main/resources/media/getByCarat_result.png)
+  
     
-    Get method![Collection](src/main/resources/media/getByCarat.png)
-    
-- Remove diamond:
-    
-    Delete method![Collection](src/main/resources/media/delete.png)
+### Delete method
+  Using the DELETE method we can delete objects from database. In out implementation we need to provide URL with DELETE method and RequestBody in JSON format (Diamond that we want to delete)
+  
+  ![delete](src/main/resources/media/delete.png)
+
 
 
 ## Tests
