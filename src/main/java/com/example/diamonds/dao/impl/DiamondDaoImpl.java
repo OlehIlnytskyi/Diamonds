@@ -36,28 +36,18 @@ public class DiamondDaoImpl implements DiamondDao {
 
     @Override
     public Diamond add(Diamond diamond) {
-        jdbcTemplate.update("INSERT INTO diamonds VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+        jdbcTemplate.update("INSERT INTO diamonds VALUES(?, ?, ?)",
                 diamond.getCarat(),
-                diamond.getCut(),
                 diamond.getColour(),
-                diamond.getClarity(),
-                diamond.getDepth(),
-                diamond.getTable(),
-                diamond.getPrice(),
-                diamond.getX(),
-                diamond.getY(),
-                diamond.getZ());
+                diamond.getPrice());
 
         return diamond;
     }
 
     @Override
     public Diamond remove(Diamond diamond) {
-        jdbcTemplate.update("DELETE FROM diamonds WHERE carat=? AND x=? AND y=? AND z=?",
-                diamond.getCarat(),
-                diamond.getX(),
-                diamond.getY(),
-                diamond.getZ());
+        jdbcTemplate.update("DELETE FROM diamonds WHERE carat=?",
+                diamond.getCarat());
 
         return diamond;
     }
@@ -66,15 +56,8 @@ public class DiamondDaoImpl implements DiamondDao {
     public void createTableIfDoesNotExist() {
         jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS diamonds (" +
                 "carat FLOAT NOT NULL," +
-                "cut VARCHAR(64)," +
                 "color VARCHAR(5)," +
-                "clarity VARCHAR(64)," +
-                "depth FLOAT," +
-                "\"table\" INT," +
-                "price INT," +
-                "x FLOAT," +
-                "y FLOAT," +
-                "z FLOAT" +
+                "price INT" +
                 ");");
     }
 
@@ -84,15 +67,8 @@ public class DiamondDaoImpl implements DiamondDao {
         public Diamond mapRow(ResultSet rs, int rowNum) throws SQLException {
             return new Diamond(
                     rs.getFloat("carat"),
-                    rs.getString("cut"),
                     rs.getString("color"),
-                    rs.getString("clarity"),
-                    rs.getFloat("depth"),
-                    rs.getInt("table"),
-                    rs.getInt("price"),
-                    rs.getFloat("x"),
-                    rs.getFloat("y"),
-                    rs.getFloat("z")
+                    rs.getInt("price")
             );
         }
     }
